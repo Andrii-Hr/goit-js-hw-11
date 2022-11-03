@@ -88,3 +88,23 @@ body {
   height: 200px;
   object-fit: cover;
 }
+.load-more {
+  display: none;
+  margin: 10px auto;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: white;
+  background-color: darkblue;
+  cursor: pointer;
+}
+
+.load-more:hover {
+  background-color: #3e868e;
+}
+
+.load-more:active {
+  background-color: #3e8e41;
+  transform: translateY(4px);
+}
