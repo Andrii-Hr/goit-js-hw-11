@@ -29,6 +29,7 @@ function newSearch(e) {
 }
 
 function loadMoreImg() {
+  loadMore.style.display = 'none';
   pagination += 1;
   searchingImages();
 }
@@ -95,12 +96,13 @@ function renderImages({ hits, totalHits }) {
     Notiflix.Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
-  } else if (displayedImages > 0 && displayedImages === totalOfHits) {
+  } else if (displayedImages >= totalOfHits ) {
+    loadMore.style.display = 'none';
     Notiflix.Notify.info(
       "We're sorry, but you've reached the end of search results."
     );
   }
-
+  
   if (pagination > 1) {
     const { height: cardHeight } = document
       .querySelector('.gallery .gallery__item')
